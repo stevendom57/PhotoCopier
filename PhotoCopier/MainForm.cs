@@ -53,6 +53,8 @@ namespace PhotoCopier
             }
 
             // convert raw files to dng format
+            DngConverter converter = new DngConverter();
+            converter.ConvertFiles(ConfigHelper.TempPath);
 
 
         }
