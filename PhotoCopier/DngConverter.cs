@@ -11,6 +11,12 @@ namespace PhotoCopier
 {
     class DngConverter
     {
+        System.Windows.Forms.ListBox _loggingListBox;
+
+        public DngConverter(System.Windows.Forms.ListBox loggingListBox)
+        {
+            _loggingListBox = loggingListBox;
+        }
         // todo spd add logging to listbox
 
         public bool ConvertFiles(string path)
@@ -19,6 +25,7 @@ namespace PhotoCopier
             var filePathList = Directory.GetFiles(ConfigHelper.TempPath);
 
             // loop through all files, processing the cr3 files
+            int successCount = 0;
             foreach (string filePath in filePathList)
             {
                 var ext = Path.GetExtension(filePath);
@@ -39,12 +46,18 @@ namespace PhotoCopier
                 bool success = ConvertSingleFile(filePath);
                 if (success == false)
                 {
+                    _loggingListBox.Items.Add("*** Error - Could not convert " + Path.GetFileName(filePath));
                     return false;
                 }
 
                 // set dng timestamp to cr3 timestamp
                 FileHelper.SetDngTimestamp(filePath);
+
+                successCount++;
+                _loggingListBox.Items.Add("Converted " + Path.GetFileName(filePath));
             }
+
+            _loggingListBox.Items.Add("--- Finished converting " + successCount + " files ---");
             return true;
  
         }
@@ -71,7 +84,7 @@ namespace PhotoCopier
                 // Call WaitForExit and then the using-statement will close.
                 using (Process exeProcess = Process.Start(pInfo))
                 {
-                    exeProcess.WaitForExit();
+                    exeProcess.WaitForExit(timeOut);
                 }
             }
             catch
