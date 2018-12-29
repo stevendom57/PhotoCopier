@@ -42,91 +42,89 @@
             // lblSource
             // 
             this.lblSource.AutoSize = true;
-            this.lblSource.Location = new System.Drawing.Point(19, 25);
-            this.lblSource.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSource.Location = new System.Drawing.Point(28, 38);
             this.lblSource.Name = "lblSource";
-            this.lblSource.Size = new System.Drawing.Size(41, 13);
+            this.lblSource.Size = new System.Drawing.Size(60, 20);
             this.lblSource.TabIndex = 0;
             this.lblSource.Text = "Source";
             // 
             // txtSource
             // 
-            this.txtSource.Location = new System.Drawing.Point(64, 24);
-            this.txtSource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSource.Location = new System.Drawing.Point(96, 37);
             this.txtSource.Name = "txtSource";
-            this.txtSource.Size = new System.Drawing.Size(413, 20);
+            this.txtSource.Size = new System.Drawing.Size(618, 26);
             this.txtSource.TabIndex = 1;
             // 
             // txtDest
             // 
-            this.txtDest.Location = new System.Drawing.Point(64, 58);
-            this.txtDest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDest.Location = new System.Drawing.Point(96, 89);
             this.txtDest.Name = "txtDest";
-            this.txtDest.Size = new System.Drawing.Size(413, 20);
+            this.txtDest.Size = new System.Drawing.Size(618, 26);
             this.txtDest.TabIndex = 3;
             // 
             // lblDest
             // 
             this.lblDest.AutoSize = true;
-            this.lblDest.Location = new System.Drawing.Point(19, 60);
-            this.lblDest.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDest.Location = new System.Drawing.Point(28, 92);
             this.lblDest.Name = "lblDest";
-            this.lblDest.Size = new System.Drawing.Size(29, 13);
+            this.lblDest.Size = new System.Drawing.Size(43, 20);
             this.lblDest.TabIndex = 2;
             this.lblDest.Text = "Dest";
             // 
             // lbOutput
             // 
             this.lbOutput.FormattingEnabled = true;
-            this.lbOutput.Location = new System.Drawing.Point(22, 106);
-            this.lbOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOutput.ItemHeight = 20;
+            this.lbOutput.Location = new System.Drawing.Point(33, 163);
             this.lbOutput.Name = "lbOutput";
-            this.lbOutput.Size = new System.Drawing.Size(576, 147);
+            this.lbOutput.Size = new System.Drawing.Size(862, 224);
             this.lbOutput.TabIndex = 4;
             // 
             // btnChooseSoure
             // 
-            this.btnChooseSoure.Location = new System.Drawing.Point(496, 24);
-            this.btnChooseSoure.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChooseSoure.Location = new System.Drawing.Point(744, 37);
             this.btnChooseSoure.Name = "btnChooseSoure";
-            this.btnChooseSoure.Size = new System.Drawing.Size(95, 22);
+            this.btnChooseSoure.Size = new System.Drawing.Size(142, 34);
             this.btnChooseSoure.TabIndex = 5;
             this.btnChooseSoure.Text = "...";
             this.btnChooseSoure.UseVisualStyleBackColor = true;
             // 
             // btnChooseDest
             // 
-            this.btnChooseDest.Location = new System.Drawing.Point(496, 56);
-            this.btnChooseDest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChooseDest.Location = new System.Drawing.Point(744, 86);
             this.btnChooseDest.Name = "btnChooseDest";
-            this.btnChooseDest.Size = new System.Drawing.Size(95, 22);
+            this.btnChooseDest.Size = new System.Drawing.Size(142, 34);
             this.btnChooseDest.TabIndex = 6;
             this.btnChooseDest.Text = "...";
             this.btnChooseDest.UseVisualStyleBackColor = true;
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(129, 281);
+            this.btnGo.Location = new System.Drawing.Point(194, 432);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(75, 23);
+            this.btnGo.Size = new System.Drawing.Size(112, 35);
             this.btnGo.TabIndex = 7;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(402, 281);
+            this.btnCancel.Location = new System.Drawing.Point(603, 432);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 35);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 332);
+            this.ClientSize = new System.Drawing.Size(936, 511);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.btnChooseDest);
@@ -136,8 +134,7 @@
             this.Controls.Add(this.lblDest);
             this.Controls.Add(this.txtSource);
             this.Controls.Add(this.lblSource);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "PhotoCopier";
             this.ResumeLayout(false);
             this.PerformLayout();
