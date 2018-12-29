@@ -37,5 +37,16 @@ namespace PhotoCopier
                 destination.LastAccessTime = origin.LastAccessTime;
             }
         }
+
+        public static void SetDngTimestamp(string filePath)
+        {
+            var origin = new FileInfo(filePath);
+
+            string dngFilePath = filePath.ToLower().Replace(".cr3", ".dng");
+            var dngFile = new FileInfo(dngFilePath);
+            dngFile.CreationTime = origin.CreationTime;
+            dngFile.LastWriteTime = origin.LastWriteTime;
+            dngFile.LastAccessTime = origin.LastAccessTime;
+        }
     }
 }

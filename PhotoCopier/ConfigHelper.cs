@@ -12,6 +12,7 @@ namespace PhotoCopier
         private static string _destPath;
         private static string _dngConverterFilePath;
         private static string _tempPath;
+        private static string _rawFileExt;
 
         public static string SourcePath
         {
@@ -45,12 +46,21 @@ namespace PhotoCopier
             }
         }
 
+        public static string RawFileExt
+        {
+            get
+            {
+                return _rawFileExt;
+            }
+        }
+
         static public void InitializeConfig()
         {
             _sourcePath = System.Configuration.ConfigurationManager.AppSettings["SourcePath"];
             _destPath = System.Configuration.ConfigurationManager.AppSettings["DestPath"];
             _dngConverterFilePath = System.Configuration.ConfigurationManager.AppSettings["AdobeDngConvertFilePath"];
             _tempPath = System.Configuration.ConfigurationManager.AppSettings["TempPath"];
+            _rawFileExt = System.Configuration.ConfigurationManager.AppSettings["RawFileExt"];
         }
     }
 }

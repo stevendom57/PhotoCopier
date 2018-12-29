@@ -11,6 +11,7 @@ namespace PhotoCopier
 {
     class DngConverter
     {
+        // todo spd add logging to listbox
 
         public bool ConvertFiles(string path)
         {
@@ -26,12 +27,23 @@ namespace PhotoCopier
                     continue;
                 }
 
+                string dngFilePath = filePath.ToLower().Replace(".cr3", ".dng");
+                if (File.Exists(dngFilePath))
+                {
+                    // do not reconvert
+                    MessageBox.Show("File " + dngFilePath + " already exists. Not converting");
+                    continue;
+                }
+
                 // this is a cr3, convert it
                 bool success = ConvertSingleFile(filePath);
                 if (success == false)
                 {
                     return false;
                 }
+
+                // set dng timestamp to cr3 timestamp
+                FileHelper.SetDngTimestamp(filePath);
             }
             return true;
  

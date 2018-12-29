@@ -38,7 +38,7 @@ namespace PhotoCopier
             // get the list of files (flat structure) in the source directory
             var filePathList = Directory.GetFiles(txtSource.Text);
 
-            // copy all files to thge temp directory
+            // copy all files to the temp directory
             foreach(string filePath in filePathList)
             {
                 var fileName = Path.GetFileName(filePath);
